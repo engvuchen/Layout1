@@ -1,0 +1,117 @@
+html,body{
+	margin:0px;
+	font-size:0;
+}
+div{
+	height:200px;
+}
+
+/*左、中200px，右侧自适应*/
+
+/*三line-block*/
+.left{
+	width:200px;
+	background:rgb(255, 250, 232);
+	display:inline-block;
+}
+.contain{
+	width:200px;
+	background:rgb(255, 250, 232);
+	display:inline-block;
+}
+.right{
+	width:calc(100% - 400px);
+	background:rgb(23, 160, 94);
+	display:inline-block;
+}
+
+/*三float*/
+.left1{
+	width:200px;
+	background:rgb(255, 250, 232);
+	float:left;
+}
+.contain1{
+	width:200px;
+	background:rgb(255, 250, 232);
+	float:left;
+	}
+.right1{
+	width:calc(100% - 400px);
+	background:rgb(23, 160, 94);
+	float:left;
+}
+
+/*float+margin-left*/
+.left2{
+	width:200px;
+	background:rgb(255, 250, 232);
+	float:left;
+}
+.contain2{
+	width:200px;
+	background:rgb(255, 250, 232);
+	float:left;
+}
+.right2{
+	margin-left:400px;
+	width:calc(100% - 400px);
+	background:rgb(23, 160, 94);
+	/*display:inline-block*/
+	/*这里我注释掉inline-block，在默认元素会占满全行的情况下，会发生什么呢？*/
+	/*display:inline-block，触发了BFC，所有当width:100%时，元素会被堆到下一行*/
+}
+
+/*absolute+margin-left*/
+.left3{
+	width:200px;
+	background:rgb(255, 250, 232);
+	position:absolute;
+}
+.contain3{
+	width:200px;
+	background:rgb(255, 250, 232);
+	position:absolute;
+	margin-left:200px;
+}
+.right3{
+	width:calc(100% - 400px);
+	background:rgb(23, 160, 94);
+	display:inline-block;
+	margin-left:400px;
+}
+
+/*float+BFC*/
+.left4{
+	width:200px;
+	background:rgb(255, 250, 232);
+	float:left;
+}
+.contain4{
+	width:200px;
+	background:rgb(255, 250, 232);
+	float:left;
+}
+.right4{
+	width:calc(100% - 400px);
+	background:rgb(23, 160, 94);
+	display:inline-block;
+	overflow:hidden;
+}
+
+/*flex*/
+.main5{
+	display:flex;
+}
+.left5{
+	flex-basis:200px;
+	background:rgb(255, 250, 232);
+}
+.contain5{
+	flex-basis:200px;
+	background:rgb(255, 250, 232);
+}
+.right5{
+	flex-basis:calc(100% - 400px);
+	background:rgb(78, 193, 48);
+}

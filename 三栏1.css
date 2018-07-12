@@ -1,0 +1,165 @@
+html,body{
+	margin:0px;
+	font-size:0px;
+}
+
+.main div{
+	height:200px;
+}
+
+/*三栏-中间自适应*/
+
+/*三inline-block*/
+.left1{
+	display: inline-block;
+	/*height:200px;*/
+	width:200px;
+	background: rgb(255, 250, 232);
+}
+.contain1{
+	display: inline-block;
+	width:calc(100% - 400px);
+	/*height:200px;*/
+	background: rgb(24, 161, 95);
+}
+.right1{
+	display: inline-block;
+	/*height:200px;*/
+	width:200px;
+	background: rgb(255, 250, 232);
+}
+/*需要考虑渲染的顺序：HMTL、CSS*/
+/*应该依次渲染left、contain、right*/
+
+/*三float*/
+.left2{
+	width:200px;
+	background: rgb(255, 250, 232);
+	float:left;
+}
+.right2{
+	width:200px;
+	background: rgb(255, 250, 232);
+	float:right;
+}
+.contain2{
+	background: rgb(24, 161, 95);
+	width:calc(100% - 400px);
+	margin-left:200px;
+}
+/*如果调换成这个渲染顺序：left、contain、right，会导致right移到下一行；*/
+/*为什么会这样呢？float一定要优先渲染吗？*/
+/*另一个例子：contain、left、right*/
+
+
+/*float+margin-left*/
+.left3{
+	width:200px;
+	background: rgb(255, 250, 232);
+	float:left;
+}
+.right3{
+	width:200px;
+	background: rgb(255, 250, 232);
+	float:left;
+	margin-left:calc(100% - 400px);
+	/*margin-left以相邻元素的右边距为起始点*/
+}
+.contain3{
+	background: rgb(24, 161, 95);
+}
+
+/*absolute+margin-left*/
+.left4{
+	width:200px;
+	background: rgb(255, 250, 232);
+	position:absolute;
+}
+.right4{
+	width:200px;
+	background: rgb(255, 250, 232);
+	position:absolute;
+	right:0px;
+}
+.contain4{
+	background: rgb(24, 161, 95);
+	/*width:calc(100% - 400px);*/
+	/*如果追求文字不被absolute元素覆盖，那么这句是必须的*/
+	/*还需要设置margin-left*/
+}
+
+/*float+BFC*/
+.left5{
+	width:200px;
+	background: rgb(255, 250, 232);
+	float:left;
+}
+.right5{
+	width:200px;
+	background: rgb(255, 250, 232);
+	float:right;
+}
+.contain5{
+	background: rgb(24, 161, 95);
+	width:calc(100%-400px);
+	overflow: hidden;
+}
+
+/*flex*/
+.main6{
+	display:flex;
+	flex-direction: column;
+}
+.left6{
+	flex-basis:200px;
+	background: rgb(255, 250, 232);
+}
+.contain6{
+	background: rgb(24, 161, 95);
+	flex-basis:calc(100%-400px);
+}
+.right6{
+	flex-basis:200px;
+	background: rgb(255, 250, 232);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

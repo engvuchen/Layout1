@@ -1,0 +1,127 @@
+html,body{
+	margin:0;
+	font-size:0;
+}
+
+/*双inline-block*/
+.left{
+	display:inline-block;
+	background:rgb(255, 250, 232);
+	font-size:5px;
+	width:200px;
+	
+}
+.right{
+	display:inline-block;
+	background:rgb(24, 161, 95);
+	font-size:5px;
+	width:calc(100% - 200px);
+	/*width:calc(100%-20px);*/
+}
+
+/*双float*/
+.left1{
+	background:rgb(255, 250, 232);
+	font-size:5px;
+	width:200px;
+	float:left;
+}
+.right1{
+	background:rgb(255, 250, 232);
+	font-size:5px;
+	width:calc(100% - 200px);
+	float:left;
+}
+
+/*float+margin-left*/
+/*float具有包裹性，不设置宽度默认为内容宽度*/
+/*因为没有两栏分开距离要求，margin-left的设置为左栏宽度，视觉上并不起效*/
+/*不可行的*/
+.left2{
+	background:rgb(255, 250, 232);
+	font-size:5px;
+	width:200px;
+	float:left;
+}
+.right2{
+	background:rgb(27, 162, 97);
+	font-size:5px;
+	margin-left:200px;
+	/*这里的长度占满整屏*/
+	width:calc(100% - 200px);
+	float:left;
+}
+
+/*absolute+margin-left*/
+/*font-size:5px;*/
+.left3{
+	background:rgb(255, 250, 232);
+	font-size:5px;
+	width:200px;
+	position:absolute;
+}
+.right3{
+	background:rgb(23, 160, 94);
+	font-size:5px;
+	width:200px;
+	position:absolute;
+	margin-left:200px;
+	width:calc(100% - 200px);
+}
+
+/*float+BFC*/
+.left4{
+	background:rgb(255, 250, 232);
+	font-size:5px;
+	width:200px;
+	float:left;
+}
+.right4{
+	background:rgb(23, 160, 94);
+	font-size:5px;
+	overflow:hidden;
+	/*BFC元素应用BFC块状元素排版特性*/
+	/*替代：margin-left*/
+	width:calc(100% - 200px);
+	/*宽度计算正确，但是因为float会忽略没有内容的区域*/
+}
+
+/*flex*/
+.main{
+	display:flex;
+	width:100%;
+}
+.left5{
+	/*display:flex;*/
+	background:rgb(255, 250, 232);
+	font-size:5px;
+	width:200px;
+}
+.right5{
+	/*display:flex;*/
+	background:rgb(55, 175, 25);
+	font-size:5px;
+	/*width:calc(100% - 200px);*/
+	flex-basis: calc(100% - 200px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

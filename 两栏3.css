@@ -1,0 +1,125 @@
+html,body{
+	margin:0px;
+	font-size:0px;
+}
+div{
+	height:200px;
+}
+.main{
+	width:100%;
+}
+
+/*右侧定宽*/
+
+/*双inline-block*/
+.left{
+	background:rgb(255, 250, 232);
+	display:inline-block;
+	width:calc(100% - 200px);
+}
+.right{
+	background:rgb(24, 161, 95);
+	display:inline-block;
+	width:200px;
+}
+
+/*双float*/
+.left1{
+	background:rgb(255, 250, 232);
+	width:calc(100% - 200px);
+	float:left;
+}
+.right1{
+	background:rgb(24, 161, 95);
+	width:200px;
+	float:left;
+}
+
+/*float+margin-left*/
+/*两个float的话,设置margin会导致后面的float需要的宽度会超过前者*/
+/*float会忽略没有内容的空间*/
+.left2{
+	background:rgb(255, 250, 232);
+	width:calc(100% - 200px);
+	float:left;
+}
+.right2{
+	background:rgb(24, 161, 95);
+	width:200px;
+	margin-left:200px;
+	/*float:left;*/
+}
+
+/*absolute+margin-left*/
+.left3{
+	background:rgb(255, 250, 232);
+	width:calc(100% - 200px);
+	position:absolute;
+}
+.right3{
+	background:rgb(24, 161, 95);
+	width:200px;
+	margin-left:calc(100% - 200px);
+}
+
+/*float+BFC*/
+.left4{
+	background:rgb(255, 250, 232);
+	width:calc(100% - 200px);
+	float:left;
+}
+.right4{
+	background:rgb(24, 161, 95);
+	width:200px;
+	overflow:hidden;
+}
+
+/*flex*/
+/*main(div)在验证第六种方法时,才去注释*/
+.main{
+	height:200px;
+	display:flex;
+}
+.left5{
+	background:rgb(255, 250, 232);
+	flex-basis:calc(100% - 200px);
+}
+.right5{
+	background:rgb(24, 161, 95);
+	flex-basis: 200px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

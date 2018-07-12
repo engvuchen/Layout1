@@ -1,0 +1,105 @@
+html,body{
+	margin:0;
+	font-size:0;
+	/*清除空格，不清除空格，30%、70%不会在同一行*/
+}
+/*inline-block*/
+.left{
+	background-color:#A0B3D6;
+	width:30%;
+	display:inline-block;
+	font-size:5px;
+	}
+.right{
+	background-color:#2F4F4F;
+	width:70%;
+	display:inline-block;
+	font-size:5px;
+}
+
+/*float左、右*/
+.left1{
+	background-color:#A0B3D6;
+	float:left;
+	width:30%;
+	font-size:5px;
+}
+.right1{
+	background-color:#2F4F4F;
+	width:70%;
+	float:left;
+	font-size:5px;
+}
+
+/*float+BFC*/
+.left2{
+	background-color:#A0B3D6;
+	float:left;
+	width:30%;
+	font-size:5px;
+}
+/*其实如果不设置margin的话，BFC其实没有多大的必要*/
+.right2{
+	background-color:#2F4F4F;
+	width:70%;
+	overflow:hidden;
+	font-size:5px;
+}
+
+/*float(right)+margin-left*/
+/*紧贴在一起，没有必要*/
+.left3{
+	font-size:5px;
+	background-color:#A0B3D6;
+	width:30%;
+	float:left;
+}
+.right3{
+	font-size:5px;
+	background-color:#2F4F4F;
+	width:70%;
+	float:left;
+	margin-left:30%;
+	/*同样是float，应用块状元素一般的原则*/
+	/*这里加上margin就是100%了，当然没有空间放在.right3了*/
+}
+
+/*absolute+margin-left*/
+/*紧贴在一起，没有必要*/
+.left4{
+	font-size:5px;
+	background-color:#A0B3D6;
+	position:absolute;
+	width:30%;
+}
+.right4{
+	font-size:5px;
+	background-color:#2F4F4F;
+	position:absolute;
+	width:70%;
+	left:30%;
+	/*absolute“绝对脱离普通流”，所以即使相邻的元素被设置了absolute*/
+	/*也不会紧贴着相邻的这个元素*/
+}
+
+/*float+BFC，但是因为即使普通的元素都可以实现“紧贴着块状元素”*/
+/*所以BFC的设置没有必要，除非要设置margin*/
+.left5{
+	width:30%;
+	float:left;
+}
+.right5{
+	width:70%;
+}
+
+.main{
+	display:flex;
+}
+.left6{
+	width:30%;
+}
+.right6{
+	width:70%;
+}
+
+
